@@ -1,4 +1,5 @@
-﻿
+﻿@using DataAccess.Entity
+@model List<New>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
@@ -106,28 +107,34 @@
             <div>
                 <div class="row text11-content">
 
-                    <div class="col-md-3 item mb-lg-4">
-                        <div class="card">
-                            <div class="card-header p-0 position-relative border-0">
-                                <a href="detail.html">
-                                    <img class="card-img-bottom d-block radius-image" src="~/NewsOnline/assets/images/x1.jpg" alt="Card image cap">
-                                </a>
-                            </div>
-                            <div class="card-body p-0 blog-details">
-                                <h6 class="mt-4">Dec 22, 2020</h6>
-                                <a href="detail.html" class="admin">- 18:00 </a>
-                                <br>
-                                <p>
-                                    <a href="detail.html">
-                                        Canni De Byazi: "Demişəm ki, yalnız axmaq və ağılsız adamlar inkişafımızı görə
-                                        bilməzlər"
+                    @foreach(var item in Model)
+                    {
+                        <div class="col-md-3 item mb-lg-4">
+                            <div class="card">
+                                <div class="card-header p-0 position-relative border-0">
+                                    <a href="/Home/Detail/@item.ID/">
+                                        <img class="card-img-bottom d-block radius-image" src="~/newsimg/@item.Image" alt="Card image cap">
                                     </a>
-                                </p>
+                                </div>
+                                <div class="card-body p-0 blog-details">
+                                    <h6 class="mt-4">@item.Date.ToString("dd/MMM/yyyy")</h6>
+                                    <a href="/Home/Detail/@item.ID/" class="admin">- @item.Date.ToString("t") </a>
+                                    <br>
+                                    <p>
+                                        <a href="/Home/Detail/@item.ID/">
+                                            @item.Title
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
+
+
                         </div>
-
-
-                    </div>
+                    }
                 </div>
+            </div>
+        </div>
+
+    </div>
 </section>
 <!-- //home page block grids -->

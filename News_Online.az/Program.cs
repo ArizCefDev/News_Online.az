@@ -9,9 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //DataBase
-builder.Services.AddDbContext<AppDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DataConnection")
-));
+//builder.Services.AddDbContext<AppDbContext>(options =>
+//options.UseSqlServer(builder.Configuration.GetConnectionString("DataConnection")
+//));
 
 
 var app = builder.Build();

@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="zxx">
+<partial name="~/Views/Partials/HeadPartial.cshtml" />
+<body>
+    <!--header-->
+    <header id="site-header" class="w3lhny-head fixed-top">
+        <div class="container">
+            <partial name="~/Views/Partials/NavbarPartial.cshtml" />
+        </div>
+        <!-- search -->
+        <partial name="~/Views/Partials/PageSliderPartial.cshtml" />
+        <!-- //search -->
+    </header>
+    <!--/header-->
+    @RenderBody()
+    <!-- footer -->
+    <partial name="~/Views/Partials/FooterPartial.cshtml" />
+
+    <partial name="~/Views/Partials/ScriptPartial.cshtml" />
+
+</body>
+
+</html>
+

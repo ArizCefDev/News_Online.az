@@ -10,12 +10,14 @@ namespace DataAccess.Context
 {
     public class AppDbContext : DbContext
     {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=WIN-VD08C7OPT8H\\SQLEXPRESS; Database=NewsOnlineDB2; integrated security=true;");
+        }
+
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<New> News { get; set; }
 
-        public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options)
-        {
-        }
     }
 }

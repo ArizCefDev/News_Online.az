@@ -1,0 +1,47 @@
+﻿@using DataAccess.Entity
+@model List<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Home/Index/">Ana Səhifə</a></li>
+            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Kateqoriyalar</li>
+        </ul>
+    </div>
+</section>
+<!--//inner-page-->
+<!-- home page block1 -->
+<section id="about" class="home-services py-lg-5">
+    <div class="container py-lg-5 py-md-3">
+        <div class="w3l-header-sec text-center mb-md-5 mb-4">
+            <h3 class="title-w3l mx-0">Kateqoriyalar</h3>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 col-sm-12 mt-md-0 mt-4">
+                    <div class="box-wrap">
+                        <div class="box-wrap-grid">
+                            <div class="icon">
+                                <span class="fa fa-shield"></span>
+                            </div>
+                            <div class="info">
+                                <p>Ümumi: @item.ID</p>
+                                <h4><a href="#url">@item.Name</a></h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- //home page block1 -->

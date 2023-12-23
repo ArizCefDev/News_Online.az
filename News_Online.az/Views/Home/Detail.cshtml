@@ -1,0 +1,50 @@
+﻿@using DataAccess.Entity
+@model New
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Home/Index/">Ana Səhifə</a></li>
+            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Kateqoriyalar</li>
+        </ul>
+    </div>
+</section>
+<!--//inner-page-->
+<!-- services-page-->
+<section class="w3l-index2" id="services1">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="w3l-header-sec text-center mb-md-5 mb-4">
+                <h3 class="title-w3l mx-0">Ətraflı</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 left-wthree-img">
+                    <div class="position-relative">
+                        <img src="~/newsimg/@Model.Image" alt="" class="radius-image img-fluid">
+
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5 pl-lg-5 align-self">
+                    <h4 class="sub-title-w3l mx-0">
+                       @Model.Title
+                    </h4>
+                    <p class="mt-4">
+                       @Model.Text
+                    </p>
+                    <ul class="w3l-right-book mt-4 pl-3">
+                        <li>Tarix : @Model.Date.ToString("dd/MMM/yyyy")</li>
+                        <li>Saat : @Model.Date.ToString("t") </li>
+                        <li>Baxş sayı : @Model.View</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- home page block1 -->

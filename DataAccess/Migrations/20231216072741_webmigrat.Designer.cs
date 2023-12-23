@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231209180140_webmigration")]
-    partial class webmigration
+    [Migration("20231216072741_webmigrat")]
+    partial class webmigrat
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
