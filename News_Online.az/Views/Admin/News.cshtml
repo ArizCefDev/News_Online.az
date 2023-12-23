@@ -1,0 +1,58 @@
+﻿@using DataAccess.Entity
+@model List<New>
+@{
+    ViewData["Title"] = "News";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Home/Index/">Ana Səhifə</a></li>
+            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Xəbərlər</li>
+        </ul>
+    </div>
+</section>
+<!--//inner-page-->
+<!-- home page block1 -->
+<section id="about" class="home-services py-lg-5">
+    <div class="container py-lg-5 py-md-3">
+        <div class="w3l-header-sec text-center mb-md-5 mb-4">
+            <h3 class="title-w3l mx-0">Xəbərlər Cədvəli</h3>
+        </div>
+
+        <div class="row">
+        <a href="" class="btn btn-primary">Yeni +</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Başlıq</th>
+                        <th scope="col">Tarix</th>
+                        <th scope="col">Baxış</th>
+                        <th scope="col">Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.ID</th>
+                            <td><img src="~/newsimg/@item.Image"  style="width:20%"/></td>
+                            <td>@item.Title</td>
+                            <td>@item.Date</td>
+                            <td>@item.View</td>
+                            <td><a href="" class="btn btn-danger">Sil</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- //home page block1 -->
