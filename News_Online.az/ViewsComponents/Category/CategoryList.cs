@@ -1,17 +1,15 @@
 ﻿using DataAccess.Context;
-using DataAccess.Entity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace News_Online.az.Controllers
+namespace News_Online.az.ViewsComponents.Category
 {
-    public class CategoryController : Controller
+    public class CategoryList:ViewComponent
     {
         AppDbContext db=new AppDbContext();
-        public IActionResult Index()
+        public IViewComponentResult Invoke()
         {
             var values = db.Categories.ToList();
             return View(values);
         }
-
     }
 }

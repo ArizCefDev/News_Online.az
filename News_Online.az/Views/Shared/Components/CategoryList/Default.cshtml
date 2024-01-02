@@ -1,0 +1,12 @@
+﻿@using DataAccess.Entity
+@model List<Category>
+
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Kateqoriya</label>
+    <select class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+       @foreach (var item in Model)
+        {
+            <option>@item.Name</option>
+        }
+    </select>
+</div>

@@ -1,0 +1,49 @@
+﻿@using DataAccess.Entity
+@model New
+@{
+    ViewData["Title"] = "NewsAdd";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Home/Index/">Ana Səhifə</a></li>
+            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Xəbərlər</li>
+        </ul>
+    </div>
+</section>
+<!--//inner-page-->
+<!-- home page block1 -->
+<section id="about" class="home-services py-lg-5">
+    <div class="container py-lg-5 py-md-3">
+        <div class="w3l-header-sec text-center mb-md-5 mb-4">
+            <h3 class="title-w3l mx-0">Xəbərlər Formu</h3>
+        </div>
+        <div class="row">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Foto</label>
+                    <input type="text" asp-for="Image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Başlıq</label>
+                    <input type="text" asp-for="Title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Mətn</label>
+                    <textarea asp-for="Text" class="form-control" id="exampleInputEmail1"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Baxış sayı</label>
+                    <input type="number" asp-for="View" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                @await Component.InvokeAsync("CategoryList")
+                <button type="submit" class="btn btn-primary">Əlavə et</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- //home page block1 -->

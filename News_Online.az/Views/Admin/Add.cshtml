@@ -1,0 +1,36 @@
+﻿@using DataAccess.Entity
+@model Category
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Home/Index/">Ana Səhifə</a></li>
+            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Kateqoriyalar</li>
+        </ul>
+    </div>
+</section>
+<!--//inner-page-->
+<!-- home page block1 -->
+<section id="about" class="home-services py-lg-5">
+    <div class="container py-lg-5 py-md-3">
+        <div class="w3l-header-sec text-center mb-md-5 mb-4">
+            <h3 class="title-w3l mx-0">Kateqoriyalar Formu</h3>
+        </div>
+        <div class="row">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Kateqoriya adı</label>
+                    <input type="text" asp-for="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <button type="submit" class="btn btn-primary">Əlavə et</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- //home page block1 -->
