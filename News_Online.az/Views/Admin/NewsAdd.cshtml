@@ -23,10 +23,10 @@
             <h3 class="title-w3l mx-0">Xəbərlər Formu</h3>
         </div>
         <div class="row">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Foto</label>
-                    <input type="text" asp-for="Image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="file" name="photo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Başlıq</label>
@@ -37,10 +37,9 @@
                     <textarea asp-for="Text" class="form-control" id="exampleInputEmail1"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Baxış sayı</label>
-                    <input type="number" asp-for="View" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label">Kateqoriya seçin</label>
+                    @Html.DropDownListFor(x=>x.CategoryID,(IEnumerable<SelectListItem>) ViewBag.c,new {@class="form-control"})
                 </div>
-                @await Component.InvokeAsync("CategoryList")
                 <button type="submit" class="btn btn-primary">Əlavə et</button>
             </form>
         </div>

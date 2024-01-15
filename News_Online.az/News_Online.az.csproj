@@ -11,7 +11,7 @@
     <Folder Include="BusinessLayer\Concrete\" />
     <Folder Include="BusinessLayer\Config\" />
     <Folder Include="BusinessLayer\Validation\" />
-    <Folder Include="HelpersLayer\Constraints\" />
+    <Folder Include="wwwroot\error\js\" />
   </ItemGroup>
 
   <ItemGroup>

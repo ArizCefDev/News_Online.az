@@ -1,0 +1,9 @@
+﻿@using DataAccess.Entity
+@model List<About>
+
+@foreach (var item in Model)
+{
+    <p class="pr-lg-5">
+        @item.Text
+    </p>
+}

@@ -1,0 +1,38 @@
+﻿@using DataAccess.Entity
+@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Haqqımızda</li>
+        </ul>
+    </div>
+</section>
+<!--//inner-page-->
+<!-- about page about section -->
+<section class="w3l-index3" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="w3l-header-sec text-center mb-4">
+                <h3 class="title-w3l mx-0">Haqqımızda</h3>
+            </div>
+            <div class="aboutw3l-hny text-center">
+                @foreach (var item in Model)
+                {
+                    <p>
+                        @item.Text
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- home page block grids -->
